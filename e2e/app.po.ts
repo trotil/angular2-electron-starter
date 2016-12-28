@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class DemoPage {
+export class Angular2ElectronStarterPage {
   navigateTo() {
     return browser.get('/');
   }

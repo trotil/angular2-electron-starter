@@ -1,10 +1,10 @@
-import { DemoPage } from './app.po';
+import { Angular2ElectronStarterPage } from './app.po';
 
-describe('demo App', function() {
-  let page: DemoPage;
+describe('angular2-electron-starter App', function() {
+  let page: Angular2ElectronStarterPage;
 
   beforeEach(() => {
-    page = new DemoPage();
+    page = new Angular2ElectronStarterPage();
   });
 
   it('should display message saying app works', () => {
