@@ -1,2 +1,9 @@
-<h1>Angular2 Electron Starter</h1>
-<router-outlet></router-outlet>
+<div class="col-xs-12">
+    <h1>Angular2 Electron Starter</h1>
+
+    <h2>{{messageFromElectron}}</h2>
+
+    <router-outlet></router-outlet>
+
+    <button md-raised-button (click)="clickButton()">Send message to electron</button>
+</div>

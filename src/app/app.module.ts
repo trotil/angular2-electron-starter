@@ -5,6 +5,9 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouteComponent } from './route/route.component';
+import { MaterialModule } from '@angular/material';
+import { IntegrationService } from './services/integration.service';
+import 'hammerjs';
 
 @NgModule({
   declarations: [
@@ -15,9 +18,10 @@ import { RouteComponent } from './route/route.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule.forRoot()
   ],
-  providers: [],
+  providers: [IntegrationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
