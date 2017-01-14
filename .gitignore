@@ -2,6 +2,8 @@
 
 # compiled output
 /dist
+/dist-app-all
+/dist-app-mac
 /tmp
 
 # dependencies

@@ -20,15 +20,15 @@
     "tsc-electron": "tsc --p .\\electron\\tsconfig.json",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "protractor",
-    "build": "ng build --watch -o dist/",
+    "build": "ng build",
     "prepare": "copyfiles -u 1 electron/package.json dist",
     "electron": "npm run tsc-electron && npm run prepare && electron dist",
     "build_electron": "npm run tsc-electron && npm run prepare",
-    "build_watch": "npm run build ",
-    "electron_reload": "npm run build_watch",
+    "build_watch": "ng build --watch -o dist/",
     "watch": "npm-watch",
-    "dev": "concurrently --kill-others \"npm run build\" \"npm run watch\"",
-    "package": "npm run build && npm run prepare && ./node_modules/electron-packager/cli.js dist App --platform=darwin --arch=all --out=dist-app --overwrite"
+    "dev": "concurrently --kill-others \"npm run build_watch\" \"npm run watch\"",
+    "package_mac": "npm run build && npm run build_electron && node node_modules/electron-packager/cli.js dist App --platform=darwin --arch=all --out=dist-app --overwrite",
+    "package_all": "npm run build && npm run build_electron && node node_modules/electron-packager/cli.js dist App --platform=all --arch=all --out=dist-app-all --overwrite"
   },
   "private": true,
   "dependencies": {
