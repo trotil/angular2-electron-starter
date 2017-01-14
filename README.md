@@ -15,7 +15,7 @@ native debugging tools for typescript, etc.
         Electron
     </li>
     <li>
-        Angular CLI (beta.24)
+        Angular CLI (beta.25.5)
     </li>
     <li>
         Typescript for angular & electron projects
