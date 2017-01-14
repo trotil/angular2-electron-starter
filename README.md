@@ -46,5 +46,5 @@ yarn run dev
 <h3>preview electron (without angular build)</h3>
 yarn run electron
 
-<h3>create electron package (build included)</h3>
-yarn run package
+<h3>create electron package for all platforms (build included)</h3>
+yarn run package_all
