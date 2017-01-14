@@ -3,10 +3,6 @@
 
 ```bash
 
-# angular2 cli required
-npm install -g angular-cli
-
-
 # install
 npm install
 

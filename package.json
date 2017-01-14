@@ -3,6 +3,15 @@
   "version": "0.0.0",
   "license": "MIT",
   "angular-cli": {},
+  "watch": {
+    "tsc-electron": {
+      "patterns": [
+        "electron"
+      ],
+      "extensions": "ts,html,less,js",
+      "quiet": true
+    }
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -11,11 +20,14 @@
     "tsc-electron": "tsc --p .\\electron\\tsconfig.json",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "protractor",
-    "copypublic": "copyfiles -u 2 ./src/public/*.* ./dist/public",
-    "build": "ng build && npm run copypublic",
+    "build": "ng build --watch -o dist/",
     "prepare": "copyfiles -u 1 electron/package.json dist",
     "electron": "npm run tsc-electron && npm run prepare && electron dist",
-    "build_electron": "npm run build && npm run tsc-electron && npm run prepare",
+    "build_electron": "npm run tsc-electron && npm run prepare",
+    "build_watch": "npm run build ",
+    "electron_reload": "npm run build_watch",
+    "watch": "npm-watch",
+    "dev": "concurrently --kill-others \"npm run build\" \"npm run watch\"",
     "package": "npm run build && npm run prepare && ./node_modules/electron-packager/cli.js dist App --platform=darwin --arch=all --out=dist-app --overwrite"
   },
   "private": true,
@@ -43,9 +55,11 @@
     "@types/node": "^6.0.42",
     "angular-cli": "1.0.0-beta.24",
     "codelyzer": "~2.0.0-beta.1",
+    "concurrently": "^3.1.0",
     "copyfiles": "^1.0.0",
     "electron": "^1.4.4",
     "electron-packager": "^8.1.0",
+    "electron-reload": "^1.1.0",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "2.5.0",
     "karma": "1.2.0",
@@ -53,6 +67,7 @@
     "karma-cli": "^1.0.1",
     "karma-jasmine": "^1.0.2",
     "karma-remap-istanbul": "^0.2.1",
+    "npm-watch": "0.1.6",
     "protractor": "~4.0.13",
     "ts-node": "1.2.1",
     "tslint": "^4.0.2",

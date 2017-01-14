@@ -1,4 +1,6 @@
-const electron: Electron.ElectronMainAndRenderer = require('electron')
+const electron: Electron.ElectronMainAndRenderer = require('electron');
+const path = require('path');
+require('electron-reload')(__dirname);
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
@@ -17,9 +19,9 @@ function createWindow() {
 
   setTimeout(() => {
     mainWindow.webContents.send('sendHiToAngular');
-  }, 1000)
+  }, 4000);
 
-   mainWindow.on('sendHelloToElectron', () => {
+  mainWindow.on('sendHelloToElectron', () => {
     console.log('Angular says hello to Electron!');
   });
 
@@ -29,7 +31,7 @@ function createWindow() {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     mainWindow = null
-  })
+  });
 }
 
 // This method will be called when Electron has finished
