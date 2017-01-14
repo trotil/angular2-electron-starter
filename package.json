@@ -21,6 +21,7 @@
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "protractor",
     "build": "ng build",
+    "build_angular_package": "ng build --prod --target=production --environment=prod --aot true --progress false",
     "prepare": "copyfiles -u 1 electron/package.json dist",
     "electron": "npm run tsc-electron && npm run prepare && electron dist",
     "build_electron": "npm run tsc-electron && npm run prepare",
@@ -28,7 +29,7 @@
     "watch": "npm-watch",
     "dev": "concurrently --kill-others \"npm run build_watch\" \"npm run watch\"",
     "package_mac": "npm run build && npm run build_electron && node node_modules/electron-packager/cli.js dist App --platform=darwin --arch=all --out=dist-app --overwrite",
-    "package_all": "npm run build && npm run build_electron && node node_modules/electron-packager/cli.js dist App --platform=all --arch=all --out=dist-app-all --overwrite"
+    "package_all": "npm run build_angular_package && npm run build_electron && node node_modules/electron-packager/cli.js dist App --platform=all --arch=all --out=dist-app-all --overwrite"
   },
   "private": true,
   "dependencies": {
