@@ -1,11 +1,11 @@
 
-# Angular meets Electron
+# Angular meets Electron</h3>
 
-This project is configured for people who would like to get basic setup of Angular and Electron working.
-I advise you to use VSCode with it. This will give a best development experience for you by allowing to use
+This project is configured for people who would like to get the basic setup of Angular and Electron working.
+I advise you to use VSCode with it. This will give the best development experience for you by allowing to use
 native debugging tools for typescript, etc.
 
-# Technologies used
+<h3>Technologies used</h3>
 
 <ul>
     <li>
@@ -22,29 +22,29 @@ native debugging tools for typescript, etc.
     </li>
 </ul>
 
-# install vscode
+<h3>install vscode</h3>
 Download <a href="https://code.visualstudio.com/download">VSCode</a>.
 
-# fork, clone or download this repo
+<h3>fork, clone or download this repo</h3>
 git clone https://github.com/ubarevicius/angular-meets-electron.git
 
-# install yarn globally, this will speed up your installation process of npm modules
+<h3>install yarn globally, this will speed up your installation process of npm modules</h3>
 npm i -g yarn
 
-# install packages via yarn
+<h3>install packages via yarn</h3>
 yarn install
 
-# run webpack dev server
+<h3>run webpack dev server</h3>
 yarn start
 
-# run karma tests
+<h3>run karma tests</h3>
 yarn test
 
-# build angular and webpack. This also starts watching for changes on both angular and electron codebases. If one of them changes, refresh will be triggered
+<h3>build angular and webpack. This also starts watching for changes on both angular and electron codebases. If one of them changes, refresh will be triggered</h3>
 yarn run dev
 
-# preview electron (without angular build)
+<h3>preview electron (without angular build)</h3>
 yarn run electron
 
-# create electron package (build included)
+<h3>create electron package (build included)</h3>
 npm run package
