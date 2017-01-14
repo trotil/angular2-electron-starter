@@ -47,4 +47,4 @@ yarn run dev
 yarn run electron
 
 <h3>create electron package (build included)</h3>
-npm run package
+yarn run package
