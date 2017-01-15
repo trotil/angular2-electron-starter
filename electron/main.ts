@@ -1,10 +1,11 @@
 const electron: Electron.ElectronMainAndRenderer = require('electron');
 const path = require('path');
 
-// const isDev = require('electron-is-dev');
-// if (isDev) {
-//   require('electron-reload')(__dirname);
-// }
+var environment = process.env.ELECTRON_ENV;
+if (environment === 'development') {
+  require('electron-reload')(__dirname);
+}
+
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.

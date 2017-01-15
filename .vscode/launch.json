@@ -13,7 +13,7 @@
             "runtimeArgs": [
                 "--enable-logging"
             ],
-            "env": {},
+            "env": {"ELECTRON_ENV":"development"},
             "sourceMaps": true,
             "outFiles": [
                 "${workspaceRoot}/dist/**/*.js"
