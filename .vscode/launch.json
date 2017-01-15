@@ -19,6 +19,14 @@
                 "${workspaceRoot}/dist/**/*.js"
             ],
             "console": "integratedTerminal"
+        },
+         {
+            "name": "Watch angular and electron",
+            "type": "node",
+            "request": "launch",
+            "preLaunchTask": "dev",
+            "stopOnEntry": false,
+            "args": []
         }
     ]
 }
