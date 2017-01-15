@@ -23,11 +23,11 @@
     "build": "ng build",
     "build_angular_package": "ng build --prod --target=production --environment=prod --aot true --progress false",
     "prepare": "copyfiles -u 1 electron/package.json dist",
-    "electron": "npm run tsc-electron && npm run prepare && electron dist",
     "build_electron": "npm run tsc-electron && npm run prepare",
     "build_watch": "ng build --watch -o dist/",
     "watch": "npm-watch",
     "dev": "concurrently --kill-others \"npm run build_watch\" \"npm run watch\"",
+    "electron": "npm run build && npm run build_electron && electron dist",    
     "package_mac": "npm run build && npm run build_electron && node node_modules/electron-packager/cli.js dist App --platform=darwin --arch=all --out=dist-app --overwrite",
     "package_all": "npm run build_angular_package && npm run build_electron && node node_modules/electron-packager/cli.js dist App --platform=all --arch=all --out=dist-app-all --overwrite"
   },

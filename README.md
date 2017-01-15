@@ -43,7 +43,7 @@ yarn test
 <h3>build angular and webpack. This also starts watching for changes on both angular and electron codebases. If one of them changes, refresh will be triggered</h3>
 yarn run dev
 
-<h3>preview electron (without angular build)</h3>
+<h3>builds angular and electron typescript code and runs the application (Independent of VSCode)</h3>
 yarn run electron
 
 <h3>create electron package for all platforms (build included)</h3>
