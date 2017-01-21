@@ -26,8 +26,8 @@
     "build_electron": "npm run tsc-electron && npm run prepare",
     "build_watch": "ng build --watch -o dist/",
     "watch": "npm-watch",
-    "dev": "concurrently --kill-others \"npm run build_watch\" \"npm run watch\"",
-    "electron": "npm run build && npm run build_electron && electron dist",    
+    "dev": "npm run build_electron && concurrently --kill-others \"npm run build_watch\" \"npm run watch\"",
+    "electron": "npm run build && npm run build_electron && electron dist",
     "package_mac": "npm run build && npm run build_electron && node node_modules/electron-packager/cli.js dist App --platform=darwin --arch=all --out=dist-app --overwrite",
     "package_all": "npm run build_angular_package && npm run build_electron && node node_modules/electron-packager/cli.js dist App --platform=all --arch=all --out=dist-app-all --overwrite"
   },
